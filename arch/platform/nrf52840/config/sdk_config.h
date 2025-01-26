@@ -4298,6 +4298,13 @@
 #endif
 
 // </e>
+#ifndef NRF_PWR_MGMT_ENABLED
+#define NRF_PWR_MGMT_ENABLED 1
+#endif
+
+#ifndef NRF_SECTION_ITER_ENABLED
+#define NRF_SECTION_ITER_ENABLED 1
+#endif
 
 // <<< end of configuration section >>>
 #endif //SDK_CONFIG_H
