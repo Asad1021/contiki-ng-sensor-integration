@@ -13,14 +13,7 @@ AUTOSTART_PROCESSES(&low_power);
 
 /*---------------------------------------------------------------------------*/
 
-static void idle_state_handle(void)
-{
-    if (NRF_LOG_PROCESS() == false)
-    {
-        nrf_pwr_mgmt_run();
-    }
-}
-
+static void idle_state_handle(void);
 
 PROCESS_THREAD(low_power, ev, data)
 {
@@ -36,24 +29,16 @@ PROCESS_THREAD(low_power, ev, data)
 
 
   nrf_pwr_mgmt_init();
-
   /* Setup a periodic timer that expires after 1 seconds. */
   etimer_set(&timer, CLOCK_SECOND * 10);
   while(1) {
-    /*
-     * Request a fresh read
-     */
-      // nrf_pwr_mgmt_run();
-      // nrf_pwr_mgmt_shutdown(NRF_PWR_MGMT_SHUTDOWN_GOTO_DFU);
-      idle_state_handle();
+    nrf_pwr_mgmt_run();
     /* Wait for the periodic timer to expire and then restart the timer. */
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&timer));
     etimer_reset(&timer);
   }
-  // printf("Going to sleep\n"); 
-  // nrf_pwr_mgmt_shutdown(NRF_PWR_MGMT_SHUTDOWN_GOTO_DFU);
-  // nrf_pwr_mgmt_shutdown(NRF_PWR_MGMT_SHUTDOWN_GOTO_SYSOFF);
-
+ 
   PROCESS_END();
 }
+
 /*---------------------------------------------------------------------------*/

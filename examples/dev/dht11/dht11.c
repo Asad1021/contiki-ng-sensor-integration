@@ -47,7 +47,7 @@ PROCESS(dht11_process, "DHT 11 process");
 AUTOSTART_PROCESSES(&dht11_process);
 /*---------------------------------------------------------------------------*/
 #define DHT11_GPIO_PORT (1)
-#define DHT11_GPIO_PIN  (12)
+#define DHT11_GPIO_PIN  (15)
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(dht11_process, ev, data)
 {

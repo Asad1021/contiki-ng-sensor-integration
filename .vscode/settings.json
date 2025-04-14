@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "nrf_pwr_mgmt.h": "c",
+        "sdk_common.h": "c",
+        "sdk_config.h": "c",
+        "nrf_power.h": "c"
+    }
+}

@@ -177,6 +177,7 @@ DFU_FLAGS = -p $(PORT)
 ifeq (, $(shell which $(NRFUTIL)))
 	$(error Could not find nrfutil "$(NRFUTIL)", please install it first)
 else
+#	$(NRFUTIL) pkg generate --hw-version 52 --sd-req 0x0100 --softdevice /Downloads/DeviceDownload\ \(1\)/nRF5SDK160098a08e2/components/softdevice/s140/s140_nrf52_7.0.1_softdevice.hex --debug-mode --application $< $(BUILD_DIR_BOARD)/nrf52840_dfu_image.zip
 	$(NRFUTIL) pkg generate --hw-version 52 --sd-req 0x00 --debug-mode --application $< $(BUILD_DIR_BOARD)/nrf52840_dfu_image.zip
 	$(NRFUTIL) dfu usb-serial $(DFU_FLAGS) -pkg $(BUILD_DIR_BOARD)/nrf52840_dfu_image.zip
 endif

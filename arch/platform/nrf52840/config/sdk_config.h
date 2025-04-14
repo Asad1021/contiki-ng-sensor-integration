@@ -3213,7 +3213,7 @@
 // <e> NRF_PWR_MGMT_CONFIG_LOG_ENABLED - Enables logging in the module.
 //==========================================================
 #ifndef NRF_PWR_MGMT_CONFIG_LOG_ENABLED
-#define NRF_PWR_MGMT_CONFIG_LOG_ENABLED 0
+#define NRF_PWR_MGMT_CONFIG_LOG_ENABLED 1
 #endif
 // <o> NRF_PWR_MGMT_CONFIG_LOG_LEVEL  - Default Severity level
 
@@ -3240,7 +3240,7 @@
 // <8=> White
 
 #ifndef NRF_PWR_MGMT_CONFIG_INFO_COLOR
-#define NRF_PWR_MGMT_CONFIG_INFO_COLOR 0
+#define NRF_PWR_MGMT_CONFIG_INFO_COLOR 5
 #endif
 
 // <o> NRF_PWR_MGMT_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
@@ -3256,7 +3256,7 @@
 // <8=> White
 
 #ifndef NRF_PWR_MGMT_CONFIG_DEBUG_COLOR
-#define NRF_PWR_MGMT_CONFIG_DEBUG_COLOR 0
+#define NRF_PWR_MGMT_CONFIG_DEBUG_COLOR 2
 #endif
 
 // </e>
